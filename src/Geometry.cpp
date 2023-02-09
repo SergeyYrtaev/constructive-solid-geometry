@@ -531,6 +531,7 @@ void TriangulationVertical(ofstream& file)
 
 void Triangulation(ofstream& file)
 {
+    file << "solid cube_corner" << endl;
     TriangulationDown(file);
     TriangulationHorizontal(file);
     TriangulationVertical(file);
@@ -582,9 +583,8 @@ int main() {
     dif -> A = pl2;
     dif -> B = trCylinder3;
 
-    Tessellate(dif);
-    ofstream file("cppstudio.stl");
-    file << "solid cube_corner" << endl;
+    Tessellate(dif); 
+    ofstream file("cppstudio.stl"); // File name
     Triangulation(file);
     ExitFile(file);
     return 0;
